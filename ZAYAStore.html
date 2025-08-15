@@ -64,44 +64,103 @@
             display: block;
             margin: 0 auto;
         }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 10px;
+        }
+</style>
     </style>
 </head>
 <body>
+
      <article>
 	<header>
         <div style="float: left; margin-right: 10px;">
-             <img src="file:///C:/Users/Hernandes/Downloads/logo.webp" alt="logo_loja" width="100">
+             <img src="img/ZAYA-Photoroom.png" alt="logo_loja" width="100">
         </div>
 	<h1 style="text-align: center;">Bem-vindo à ZAYAStore!</h1>
 	<h4 style="text-align: center">"Somos uma loja especializada em moda masculina, feminina e unissex, além de uma linha completa de acessórios estilosos para todos os gostos. Aqui você encontra peças selecionadas com carinho, que unem qualidade, conforto e personalidade, tudo para realçar o seu estilo em qualquer ocasião.
 Explore nossas coleções e descubra o que combina com você!"</h4>
-	<hr style="width: 200%; height: 10px; bacground-color: rgb(247, 155, 224); border: none; margin-top: 5px;"></hr>
+	<hr style="width: 200%; height: 10px; background-color: #f9e4e8; border: none; margin-top: 5px;"></hr>
 	</header>
+	</article>
+   
+    <center>
+         <nav class="navbar"></nav>
+    <button type="button" class="btn btn-primary position-relative mx-2;">
+  			<a href="#" style="color: rgb(255, 0, 115); text-decoration: none;">Home</a>
+ 			 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary">
+   			 <span class="visually-hidden"></span>
+  			</span>
+		</button>
+		<button type="button" class="btn btn-primary position-relative" >
+  			<a href="file:///C:/Users/Aluno/Documents/Contato_site.html" style="color: rgb(255, 0, 115); text-decoration: none;">Contato</a>
+  			<span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2">
+    		<span class="visually-hidden"></span>
+  		</span>
+		</button>
+    </center>
 	</article>  
     
-          
+        <style>
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+ 
+  .search-button {
+    padding: 8px 12px;
+    background-color: #1f3e20;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+ 
+<form action="/search" method="get" class="search-container">
+  <input type="search" name="q" class="search-input" placeholder="Pesquisar..." autocomplete="off">
+  <button type="submit" class="search-button">Pesquisar</button>
+</form>
+ 
+<script>
+  const searchInput = document.querySelector('.search-input');
+  searchInput.addEventListener('input', () => {
+    // Lógica para sugestões de pesquisa (opcional)
+    console.log('Digite:', searchInput.value);
+  });
+</script>
+ 
  
 
 
     <h4>🧥 Blusas Femininas</h4>
     <div class="container">
         <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/blusa_trico_azul.webp" alt="blusa_trico_azul" width="200">
+        <img src="img/blusa_trico_azul.png" alt="blusa_trico_azul" width="200">
         <p> Blusa Trico Azul</p>
         <p>R$ 66,31</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Blusa_tricot.webp" alt="blusa_trico" width="150">
+        <img src="img/blusa_trico_vinho.jpg" alt="blusa_trico" width="150">
         <p>Blusa Trico Vinho</p>
         <p>R$54,90</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Blusa_trico_preta.webp" alt="blusa_trico_preta" width="200">
+        <img src="img/blusa_trico_preta.jpg" alt="blusa_trico_preta" width="200">
         <p>Blusa Trico Preta</p>
         <p>R$R$69,90</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/blusa_trico_nude.webp" alt="blusa_trico_nude" width="200">
+        <img src="img/blusa_trico_nude.jpg" alt="blusa_trico_nude" width="200">
         <p>Blusa Trico Nude</p>
         <p>R$69,90</p>
     </div>
@@ -110,22 +169,22 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     <div>
     <div class="container">
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/blusa_trico_colorida.webp" alt="blusa_trico_colorida" width="200">
+        <img src="img/blusa_trico_colorida.jpg" alt="blusa_trico_colorida" width="200">
         <p>Blusa Trico Colorida</p>
         <p>R$69,90</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/blusa_trico_pb.webp" alt="blusa_trico_pb" width="200">
+        <img src="img/blusa_multicolor_pb.jpg" alt="blusa_trico_pb" width="200">
         <p>Blusa Trico Multicolor</p>
         <p>R$69,90</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/blusa_mangalonga.webp" alt="blusa_trico_mangalonga" width="200">
+        <img src="img/blusa_manga_longa.jpg" alt="blusa_trico_mangalonga" width="200">
         <p>Blusa Manga Longa</p>
         <p>R$53,40</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/blusa_mangalongacinza.webp" alt="blusa_mangalongacinza" width="200">
+        <img src="img/blusa_trico_longa_cinza.png" alt="blusa_mangalongacinza" width="200">
         <p>Blusa Manga Longa Cinza</p>
         <p>R$53,40</p>
         </div>
