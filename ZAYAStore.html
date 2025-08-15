@@ -71,6 +71,14 @@
             padding: 10px 20px;
             font-size: 10px;
         }
+
+        .navbar-buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px; /* espaço entre os botões */
+            margin-bottom: 10px; /* opcional: espaço abaixo da navbar */
+        }
 </style>
     </style>
 </head>
@@ -89,8 +97,8 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
 	</article>
    
     
-         <nav class="navbar"></nav>
-    <button type="button" class="btn btn-primary position-relative mx-2;">
+         <div class="navbar-buttons">
+        <button type="button" class="btn btn-primary position-relative mx-2;">
   			<a href="#" style="color: black; text-decoration: none;">Home</a>
  			 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary">
    			 <span class="visually-hidden"></span>
@@ -102,7 +110,7 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     		<span class="visually-hidden"></span>
   		</span>
 		</button>
-    
+    </div>
 	</article>  
     
         <style>
@@ -126,6 +134,7 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     border-radius: 4px;
     cursor: pointer;
   }
+  
   .navbar {
         display: flex;
         justify-content: flex-end; /* joga para o canto direito */
@@ -324,17 +333,17 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
         <p>R$79,90</p>
     </div>
     <div class="produto">
-        <img src="img/blusa_casual_cinza.jpg" alt="Camisa_casual_cinza" width="200">
+        <img src="img/blusa_casul_cinza.jpg" alt="Camisa_casual_cinza" width="200">
         <p>Camisa Casual Cinza</p>
         <p>R$69,90</p>
         </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Camisa_longa_casual_roda.webp" alt="Camisa_longa_casual_roda" width="200">
+        <img src="img/camisa_longa_rosa.jpg" alt="Camisa_longa_casual_roda" width="200">
         <p>Camisa Longa Rosa</p>
         <p>R$99,90</p>
         </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Camisa_social_preta.webp" alt="Camisa_social_preta" width="200">
+        <img src="img/camisa_casual_preta.jpg" alt="Camisa_social_preta" width="200">
         <p>Camisa Social Preta</p>
         <p>R$69,90</p>
         </div>
@@ -344,22 +353,22 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     <h4>💎 Brincos</h4>
     <div class="container">
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Brinco_life_gota_azuis.webp" alt="Brinco_life_gota_azuis" width="200">
+        <img src="img/brinco_gotas_azuis.jpg" alt="Brinco_life_gota_azuis" width="200">
         <p>Brinco Life Gotas Azuis</p>
         <p>R$380,00</p>
     </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Brinco_encanto_azul_prata.webp" alt="Brinco_encanto_azul_prata" width="200">
+        <img src="img/brinco_encanto.jpg" alt="Brinco_encanto_azul_prata" width="200">
         <p>Brinco Encanto Azul Prata</p>
         <p>R$149,90</p>
         </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Argola_life_love_coracao.webp" alt="Argola_life_love_coracao" width="200">
+        <img src="img/brinco_argola_life_coracao.jpg" alt="Argola_life_love_coracao" width="200">
         <p>Brinco Argola life love coracao</p>
         <p>R$368,00</p>
         </div>
     <div class="produto">
-        <img src="file:///C:/Users/Hernandes/Downloads/Brinco_marine_prata_925.webp" alt="Brinco_marine_prata_925" width="200">
+        <img src="img/brinco_marine.jpg" alt="Brinco_marine_prata_925" width="200">
         <p>Brinco Marine Prata 925</p>
         <p>R$890,00</p>
         </div>
