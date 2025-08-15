@@ -406,4 +406,131 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     
 
 </body>
+<!-- Carrinho no final -->
+<style>
+#cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f9e4e8;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    z-index: 999;
+}
+#cart-icon:hover {
+    background-color: #f9e4e8;
+}
+#cart-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    display: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+}
+.remover {
+    background: red;
+    color: white;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-to-cart-btn {
+    background: #f9e4e8;
+    border: none;
+    padding: 8px 14px;
+    margin-top: 8px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.add-to-cart-btn:hover {
+    background: #f9e4e8;
+    transform: scale(1.05);
+}
+</style>
+
+<div id="cart-icon">🛒</div>
+<div id="cart-container">
+    <h3>Carrinho</h3>
+    <div id="cart-items"></div>
+    <p><strong>Total:</strong> R$ <span id="cart-total">0,00</span></p>
+</div>
+
+<script>
+let carrinho = [];
+let total = 0;
+
+// Adiciona botões a todos os produtos
+document.querySelectorAll('.produto').forEach(produto => {
+    let nome = produto.querySelector('p:nth-of-type(1)').innerText.trim();
+    let precoText = produto.querySelector('p:nth-of-type(2)').innerText
+        .replace(/R\$/g, '') // remove todos os "R$"
+        .replace(',', '.')
+        .trim();
+    let preco = parseFloat(precoText);
+    if (!isNaN(preco)) {
+        let btn = document.createElement('button');
+        btn.innerText = 'Adicionar ao Carrinho';
+        btn.classList.add('add-to-cart-btn');
+        btn.onclick = () => adicionarAoCarrinho(nome, preco);
+        produto.appendChild(btn);
+    }
+});
+
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    total += preco;
+    alert(nome + " foi adicionado ao carrinho!");
+    atualizarCarrinho();
+}
+
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    let itensDiv = document.getElementById("cart-items");
+    itensDiv.innerHTML = "";
+    carrinho.forEach((item, index) => {
+        itensDiv.innerHTML += `
+            <div class="item-carrinho">
+                <span>${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}</span>
+                <button class="remover" onclick="removerItem(${index})">X</button>
+            </div>
+        `;
+    });
+    document.getElementById("cart-total").innerText = total.toFixed(2).replace('.', ',');
+}
+
+document.getElementById("cart-icon").addEventListener("click", () => {
+    let carrinhoDiv = document.getElementById("cart-container");
+    carrinhoDiv.style.display = carrinhoDiv.style.display === "none" ? "block" : "none";
+});
+</script>
+
 </html>
