@@ -79,10 +79,44 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
 	</header>
 	</article>  
     
-        <form action="/search" method="get"></form>
-        <input type="search" name="q" placeholder="Pesquisar...">
-        <button type="submit">Pesquisar</button>
+
+
+        <style>
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+ 
+  .search-button {
+    padding: 8px 12px;
+    background-color: #1f3e20;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+ 
+<form action="/search" method="get" class="search-container">
+  <input type="search" name="q" class="search-input" placeholder="Pesquisar..." autocomplete="off">
+  <button type="submit" class="search-button">Pesquisar</button>
 </form>
+ 
+<script>
+  const searchInput = document.querySelector('.search-input');
+  searchInput.addEventListener('input', () => {
+    // Lógica para sugestões de pesquisa (opcional)
+    console.log('Digite:', searchInput.value);
+  });
+</script>
+ 
  
 
 
