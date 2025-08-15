@@ -126,6 +126,7 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     border-radius: 4px;
     cursor: pointer;
   }
+  
   .navbar {
         display: flex;
         justify-content: flex-end; /* joga para o canto direito */
@@ -511,7 +512,7 @@ document.querySelectorAll('.produto').forEach(produto => {
 function adicionarAoCarrinho(nome, preco) {
     carrinho.push({ nome, preco });
     total += preco;
-    alert(nome + " foi adicionado ao carrinho!");
+    alert("ZAYA Store diz: " + nome + " foi adicionado ao carrinho!");
     atualizarCarrinho();
 }
 
