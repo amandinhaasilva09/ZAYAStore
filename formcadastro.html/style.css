@@ -97,9 +97,9 @@ body {
 }
 
 .input-box {
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.1rem;
 }
 
 .input-box input{
