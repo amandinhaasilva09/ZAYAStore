@@ -107,6 +107,69 @@
             align-items: center; /* alinha verticalmente */
             gap: 10px; /* espaço entre eles */
         }
+
+        #cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f9e4e8;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            transition: background 0.3s ease;
+            z-index: 999;
+        }
+        #cart-icon:hover {
+            background-color: #f9e4e8;
+        }
+        #cart-container {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            color: black;
+            border-radius: 8px;
+            padding: 15px;
+            width: 300px;
+            display: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 5px 0;
+        }
+        .remover {
+            background: red;
+            color: white;
+            border: none;
+            padding: 3px 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn {
+            background: #ff69b4;
+            border: none;
+            padding: 8px 14px;
+            margin-top: 8px;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .add-to-cart-btn:hover {
+            background: #f9e4e8;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -425,72 +488,6 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     
 
 </body>
-<!-- Carrinho no final -->
-<style>
-#cart-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #f9e4e8;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: background 0.3s ease;
-    z-index: 999;
-}
-#cart-icon:hover {
-    background-color: #f9e4e8;
-}
-#cart-container {
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    background: white;
-    color: black;
-    border-radius: 8px;
-    padding: 15px;
-    width: 300px;
-    display: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-.item-carrinho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 5px 0;
-}
-.remover {
-    background: red;
-    color: white;
-    border: none;
-    padding: 3px 6px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.add-to-cart-btn {
-    background: #ff69b4;
-    border: none;
-    padding: 8px 14px;
-    margin-top: 8px;
-    border-radius: 25px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-.add-to-cart-btn:hover {
-    background: #f9e4e8;
-    transform: scale(1.05);
-}
-</style>
-
 <div id="cart-icon">🛒</div>
 <div id="cart-container">
     <h3>Carrinho</h3>
