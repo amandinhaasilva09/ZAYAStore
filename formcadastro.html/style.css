@@ -58,3 +58,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.login-button button {
+    border: none;
+    background-color: #ee1a1a;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
