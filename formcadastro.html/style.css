@@ -44,3 +44,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
