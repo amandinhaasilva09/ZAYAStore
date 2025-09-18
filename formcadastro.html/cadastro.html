@@ -21,6 +21,118 @@
                 </div>
             </div>
 
+            * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container {
+    width: 900px;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    overflow: hidden;
+}
+
+.form-image {
+    width: 50%;
+    display: flex;
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-image img{
+    width: 100%;
+    max-width: 400px;
+}
+
+.form {
+    width: 50%;
+    background-color: #fff;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header h1{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login button {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.login-button button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #6c63ff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button button:hover {
+    background-color: #574bdb;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+} 
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #ee1a1a;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.input-box {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box input {
+    margin: 0.5rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
             <div class="input group">
                 <div class="input-box">
                     <label for="nome">Nome Completo</label>
