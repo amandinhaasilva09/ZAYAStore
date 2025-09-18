@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 800px;
     height: 80vh;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
     display: flex;
@@ -45,7 +45,7 @@ body {
     align-items: center;
 }
 
-.form-header {
+.form-header h1{
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
