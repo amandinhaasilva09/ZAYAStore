@@ -50,3 +50,11 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.login button {
+    border: none;
+    background-color: #ee1a1a;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
