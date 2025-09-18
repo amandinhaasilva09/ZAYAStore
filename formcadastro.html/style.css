@@ -34,7 +34,8 @@ body {
 }
 
 .form-image img{
-    width: 31rem;
+    width: 100%;
+    max-width: 400px;
 }
 
 .form {
