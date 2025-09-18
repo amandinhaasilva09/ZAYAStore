@@ -93,8 +93,7 @@ body {
 .input-group {
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem 0;
+    gap: 1rem;
 }
 
 .input-box {
