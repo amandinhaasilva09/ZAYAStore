@@ -66,3 +66,24 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.login-button button:hover {
+    background-color: #ff4b4b;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+} 
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #ee1a1a;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
