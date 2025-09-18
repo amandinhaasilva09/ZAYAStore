@@ -87,3 +87,10 @@ body {
     position: absolute;
     border-radius: 10px;
 }
+
+.input-group {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
