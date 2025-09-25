@@ -79,16 +79,9 @@
 
         <script>
 document.getElementById('cadastro').addEventListener('submit', function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    const dados = new FormData(this);
-    const nome = dados.get('nome');
-    const email = dados.get('email');
-
-    localStorage.setItem('usuarioNome', nome);
-    localStorage.setItem('usuarioEmail', email);
-
-    window.location.href = "index.html";
+    window.location.href = "ZAYAStore.html";
 });
 </script>
     </div>
