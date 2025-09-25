@@ -12,7 +12,7 @@
         <img src="file:///C:/Users/Aluno/Downloads/cadastro.jpg" alt="Imagem do Formulário">
     </div>
     <div class="form">
-        <form action="#">
+        <form id="cadastro">
             <div class="form-header">
                 <div class="title">
                     <h1>Cadastro</h1>
@@ -73,9 +73,17 @@
             </div>
 
             <div class="login-button">
-                    <button><a href="file:///C:/Users/Aluno/Downloads/login.html">Login</a></button>
-                </div>
+                    <button type="submit">Concluir Cadastro</button>
+     </div>
         </form>
+
+        <script>
+    document.getElementById('cadastro').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    window.location.href = "../ZAYAStore.html";
+});
+</script>
     </div>
    </div> 
     
