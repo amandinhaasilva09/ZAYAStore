@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+   <div class="container">
+    <div class="form-image">
+        <img src="file:///C:/Users/Aluno/Downloads/cadastro.jpg" alt="Imagem do Formulário">
+    </div>
+    <div class="form">
+        <form id="cadastro">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastro</h1>
+                </div>
+            </div>
+            
+
+            <div class="input group">
+                <div class="input-box">
+                    <label for="nome">Nome Completo</label>
+                    <input id="nome" type="text" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="Digite seu email" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="celular">Celular</label>
+                    <input id="celular" type="tel" placeholder="(xx) xxxxx-xxxx " required>
+                </div>
+
+                <div class="input-box">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="confirmar-senha">Confirmar Senha</label>
+                    <input id="confirmar-senha" type="password" placeholder="Confirme sua senha" required>
+                </div>
+            </div>
+
+            <div class="gender-inputs">
+                <div class="gender-title">
+                    <h6>Gênero</h6>
+                </div>
+
+                <div class="gender-group">
+                    <div class="gender-input">
+                        <input type="radio" id="feminino" name="genero" value="feminino">
+                        <label for="feminino">Feminino</label>
+                    </div>
+                    <div class="gender-input">
+                        <input type="radio" id="masculino" name="genero" value="masculino">
+                        <label for="masculino">Masculino</label>
+                    </div>
+                    <div class="gender-input">  
+                        <input type="radio" id="outro" name="genero" value="outro">
+                        <label for="outro">Outro</label>
+                    </div>
+                    <div class="gender-input">  
+                        <input type="radio" id="prefiro-nao-dizer" name="genero" value="prefiro-nao-dizer">
+                        <label for="prefiro-nao-dizer">Prefiro não dizer</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-button">
+                    <button type="submit">Concluir Cadastro</button>
+     </div>
+        </form>
+
+        <script>
+    document.getElementById('cadastro').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    window.location.href = "../ZAYAStore.html";
+});
+</script>
+    </div>
+   </div> 
+    
+</body>
+</html>

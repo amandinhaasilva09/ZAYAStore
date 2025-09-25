@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAYAStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
             background-color: #f9e4e8; /* Rosa claro */
@@ -79,7 +81,97 @@
             gap: 10px; /* espaço entre os botões */
             margin-bottom: 10px; /* opcional: espaço abaixo da navbar */
         }
-</style>
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+ 
+        .search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+ 
+        .search-button {
+            padding: 8px 12px;
+            background-color: #1f3e20;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+  
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* joga para o canto direito */
+            align-items: center; /* alinha verticalmente */
+            gap: 10px; /* espaço entre eles */
+        }
+
+        #cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f9e4e8;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            transition: background 0.3s ease;
+            z-index: 999;
+        }
+        #cart-icon:hover {
+            background-color: #f9e4e8;
+        }
+        #cart-container {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            color: black;
+            border-radius: 8px;
+            padding: 15px;
+            width: 300px;
+            display: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 5px 0;
+        }
+        .remover {
+            background: red;
+            color: white;
+            border: none;
+            padding: 3px 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn {
+            background: #ff69b4;
+            border: none;
+            padding: 8px 14px;
+            margin-top: 8px;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .add-to-cart-btn:hover {
+            background: #f9e4e8;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -98,6 +190,15 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
    
     
          <div class="navbar-buttons">
+            <button type="button" class="btn btn-primary position-relative mx-2;">
+  			<a href="formcadastro.html/cadastro.html" style="color: black; text-decoration: none;">
+                <img width="30" height="30" src="file:///C:/Users/Aluno/Downloads/cadastro.png" alt="home" style="vertical-align: middle; margin-right: 5px;" />
+            </a>
+ 			 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary">
+   			 <span class="visually-hidden"></span>
+  			</span>
+		</button>
+    
         <button type="button" class="btn btn-primary position-relative mx-2;">
   			<a href="#" style="color: black; text-decoration: none;">
                 <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/home.png" alt="home" style="vertical-align: middle; margin-right: 5px;" />
@@ -115,38 +216,7 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
   		</span>
 		</button>
     </div>
-	</article>  
-    
-        <style>
-  .search-container {
-    display: flex;
-    align-items: center;
-  }
- 
-  .search-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 8px;
-  }
- 
-  .search-button {
-    padding: 8px 12px;
-    background-color: #1f3e20;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .navbar {
-        display: flex;
-        justify-content: flex-end; /* joga para o canto direito */
-        align-items: center; /* alinha verticalmente */
-        gap: 10px; /* espaço entre eles */
-    }
-</style>
- 
+	
 <form action="/search" method="get" class="search-container">
   <input type="search" name="q" class="search-input" placeholder="Pesquisar..." autocomplete="off">
   <button type="submit" class="search-button">Pesquisar</button>
@@ -397,7 +467,8 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
         <img src="img/brinco_mistico_prata.jpg" alt="Brinco_mistico_prata" width="200">
         <p>Brinco Mistico Prata</p>
         <p>R$490,00</p>
-        </div>
+    </div>
+    </div>
 
     <div style="flex-basis: 100%; height: 0%;"></div>
     <h4>📿Colares </h4>
@@ -426,73 +497,12 @@ Explore nossas coleções e descubra o que combina com você!"</h4>
     </div>
     
 
-</body>
-<!-- Carrinho no final -->
-<style>
-#cart-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #f9e4e8;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: background 0.3s ease;
-    z-index: 999;
-}
-#cart-icon:hover {
-    background-color: #f9e4e8;
-}
-#cart-container {
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    background: white;
-    color: black;
-    border-radius: 8px;
-    padding: 15px;
-    width: 300px;
-    display: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-.item-carrinho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 5px 0;
-}
-.remover {
-    background: red;
-    color: white;
-    border: none;
-    padding: 3px 6px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.add-to-cart-btn {
-    background: #ff69b4;
-    border: none;
-    padding: 8px 14px;
-    margin-top: 8px;
-    border-radius: 25px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-.add-to-cart-btn:hover {
-    background: #f9e4e8;
-    transform: scale(1.05);
-}
-</style>
+    <script>
+        const botaoCadastro = document.querySelector('.btn-cadastro');
+        const container = document.querySelector('.container');
+    </script>
 
+</body>
 <div id="cart-icon">🛒</div>
 <div id="cart-container">
     <h3>Carrinho</h3>

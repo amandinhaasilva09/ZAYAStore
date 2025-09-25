@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - ZAYAStore</title>
+
+<style>
+     body {
+      background-color: #f9e4e8;
+      font-family:'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #333;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .actions button {
+      margin: 0 5px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .edit {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .delete {
+      background-color: #e74c3c;
+      color: white;
+    }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    #popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+    }
+    #popup input {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+    #popup button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #salvar {
+      background: #4CAF50;
+      color: white;
+    }
+    #cancelar {
+      background: #e74c3c;
+      color: white;
+    }
+</style>
+</head>
+    <body>
+        <h1>Painel Administrativo - ZAYAStore</h1>
+
+        <table>
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Ações</th>
+                </tr>
+            </thead>
+    <tbody id="tabela-produtos">
+      
+    </tbody>
+  </table>
+
+    <div id="popup">
+    <div id="popup-content">
+      <h3>Editar Produto</h3>
+      <input type="text" id="edit-nome" placeholder="Nome do produto">
+      <input type="number" step="0.01" id="edit-preco" placeholder="Preço">
+      <br>
+      <button id="salvar">Salvar</button>
+      <button id="cancelar">Cancelar</button>
+    </div>
+  </div>
+
+    <script>
+        const produtos = [
+            // 🧥 Blusas Femininas
+                { id: 1, nome: "Blusa Trico Azul", preco: 66.31 },
+                { id: 2, nome: "Blusa Trico Vinho", preco: 54.90 },
+                { id: 3, nome: "Blusa Trico Preta", preco: 69.90 },
+                { id: 4, nome: "Blusa Trico Nude", preco: 69.90 },
+                { id: 5, nome: "Blusa Trico Colorida", preco: 69.90 },
+                { id: 6, nome: "Blusa Trico Multicolor", preco: 69.90 },
+                { id: 7, nome: "Blusa Manga Longa", preco: 53.40 },
+                { id: 8, nome: "Blusa Manga Longa Cinza", preco: 53.40 },
+
+            // 🧥 Blusas e Moletons Masculinos
+                { id: 9, nome: "Casaco Branco", preco: 179.90 },
+                { id: 10, nome: "Moletom Personalizado", preco: 69.90 },
+                { id: 11, nome: "Moletom Liso Amarelo", preco: 53.40 },
+                { id: 12, nome: "Blusa Manga Longa Cinza", preco: 53.40 },
+                { id: 13, nome: "Moletom Preto Texas Farm", preco: 389.90 },
+                { id: 14, nome: "Moletom Preto e Branco Adidas", preco: 139.90 },
+                { id: 15, nome: "Blusa Forrada", preco: 229.90 },
+                { id: 16, nome: "Moletom California Rosa", preco: 149.90 },
+
+            // 👗 Vestidos
+                { id: 17, nome: "Vestido Farm Estampado", preco: 214.90 },
+                { id: 18, nome: "Vestido Floraline", preco: 269.99 },
+                { id: 19, nome: "Vestido Farm Flores", preco: 234.90 },
+                { id: 20, nome: "Vestido Farm Midi", preco: 241.90 },
+                { id: 21, nome: "Vestido Casual Longo Azul", preco: 214.99 },
+                { id: 22, nome: "Vestido Florido", preco: 199.90 },
+                { id: 23, nome: "Vestido Estampado Preto e Branco", preco: 214.90 },
+                { id: 24, nome: "Vestido Flores", preco: 169.90 },
+
+            // 👚 Blusa Casual Masculina
+                { id: 25, nome: "Camisa Casual Masculina Azul", preco: 69.90 },
+                { id: 26, nome: "Camisa Casual Masculina Rosa", preco: 69.90 },
+                { id: 27, nome: "Camisa Casual Masculina Listras", preco: 69.90 },
+                { id: 28, nome: "Camisa Casual Masculina Branca", preco: 69.90 },
+                { id: 29, nome: "Camisa Casual Jeans", preco: 79.90 },
+                { id: 30, nome: "Camisa Casual Cinza", preco: 69.90 },
+                { id: 31, nome: "Camisa Longa Rosa", preco: 99.90 },
+                { id: 32, nome: "Camisa Social Preta", preco: 69.90 },
+
+            // 💎 Brincos
+                { id: 33, nome: "Brinco Life Gotas Azuis", preco: 380.00 },
+                { id: 34, nome: "Brinco Encanto Azul Prata", preco: 149.90 },
+                { id: 35, nome: "Brinco Argola Life Love Coração", preco: 368.00 },
+                { id: 36, nome: "Brinco Marine Prata 925", preco: 890.00 },
+                { id: 37, nome: "Brinco Argola Coração Prata", preco: 392.00 },
+                { id: 38, nome: "Brinco Life Estrelas", preco: 168.00 },
+                { id: 39, nome: "Brinco Lua Azul Prata", preco: 139.90 },
+                { id: 40, nome: "Brinco Místico Prata", preco: 490.00 },
+
+            // 📿 Colares
+                { id: 41, nome: "Colar Pingente Coração", preco: 69.90 },
+                { id: 42, nome: "Pingente Life Glam", preco: 270.00 },
+                { id: 43, nome: "Colar Prata Duplo", preco: 89.90 },
+                { id: 44, nome: "Colar Prata Banhado a Ouro", preco: 920.00 }
+               ];
+
+            const tabela = document.getElementById("tabela-produtos");
+            const popup = document.getElementById("popup");
+            const inputNome = document.getElementById("edit-nome");
+            const inputPreco = document.getElementById("edit-preco");
+            let produtoEditando = null;
+
+            function carregarProdutos() {
+                tabela.innerHTML = "";
+                produtos.forEach(produto => {
+                    tabela.innerHTML += `
+                    <tr>
+                        <td>${produto.id}</td>
+                        <td>${produto.nome}</td>
+                        <td>R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                        <td class="actions">
+                        <button class="edit" onclick="editarProduto(${produto.id})">Editar</button>
+                        <button class="delete" onclick="excluirProduto(${produto.id})">Excluir</button>
+                        </td>
+                    </tr>
+                    `;
+                });
+                }
+
+                function excluirProduto(id) {
+                    const index = produtos.findIndex(p => p.id === id);
+                    if (index !== -1) {
+                        produtos.splice(index, 1);
+                        carregarProdutos();
+                    }
+                }
+
+                function editarProduto(id) {
+                    produtoEditando = produtos.find(p => p.id === id);
+                    if (produtoEditando) {
+                        inputNome.value = produtoEditando.nome;
+                        inputPreco.value = produtoEditando.preco;
+                        popup.style.display = "flex";
+                    }
+                }
+
+                document.getElementById("salvar").onclick = () => {
+                    if (produtoEditando) {
+                        produtoEditando.nome = inputNome.value;
+                        produtoEditando.preco = parseFloat(inputPreco.value);
+                        carregarProdutos();
+                        popup.style.display = "none";
+                    }
+                };
+
+                document.getElementById("cancelar").onclick = () => {
+                    popup.style.display = "none";
+                };
+
+                carregarProdutos();
+  </script>
+
+</body>
+</html>
